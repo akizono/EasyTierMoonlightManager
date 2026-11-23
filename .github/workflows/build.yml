@@ -1,0 +1,36 @@
+name: build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore EasyTierMoonlightManager.csproj
+
+      - name: Build
+        run: dotnet build EasyTierMoonlightManager.csproj -c Release --no-restore
+
+      - name: Publish (single file, framework-dependent)
+        run: >
+          dotnet publish EasyTierMoonlightManager.csproj -c Release -r win-x64
+          -p:SelfContained=false -p:PublishSingleFile=true -o dist
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EasyTierMoonlightManager-win-x64
+          path: dist/EasyTierMoonlightManager.exe
+          if-no-files-found: error

@@ -1,0 +1,7 @@
+{
+  "coreExe": "C:\\Tools\\easytier\\easytier-core.exe",
+  "cliExe": "C:\\Tools\\easytier\\easytier-cli.exe",
+  "configFile": "C:\\ProgramData\\EasyTier\\config.toml",
+  "sunshineConf": "C:\\Program Files\\Sunshine\\config\\sunshine.conf",
+  "sunshineService": "SunshineService"
+}
