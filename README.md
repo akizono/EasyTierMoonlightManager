@@ -53,7 +53,12 @@ Moonlight 直接连接主机的虚拟 IP，所以 Sunshine 需要监听 `0.0.0.0
 
 ## 下载与构建
 
-已经编译好的版本见 [Releases](https://github.com/akizono/EasyTierMoonlightManager/releases)，单文件、需要 .NET 10 桌面运行时。
+已经编译好的版本见 [Releases](https://github.com/akizono/EasyTierMoonlightManager/releases)：
+
+| 文件 | 说明 |
+| --- | --- |
+| `EasyTierMoonlightManager-v1.0.0-win-x64.exe` | 约 240 KB，需要先安装 .NET 10 桌面运行时 |
+| `EasyTierMoonlightManager-v1.0.0-win-x64-selfcontained.exe` | 约 47 MB，自带运行时，不需要额外安装 |
 
 自行构建：
 
